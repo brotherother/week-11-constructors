@@ -12,38 +12,22 @@ var studentDetentions;
 var studentSleeping;
 var studentCatchPhrase;
 
-prompt.get('name', function (err, result) {
-	console.log('Enter Student Name:');
-	studentName = result.name;
-});
 
-prompt.get('gender', function (err, result) {
-	console.log('Enter Student Gender:');
+
+prompt.get(['name', 'gender', 'grade', 'gpa', 'detentions', 'sleeping', 'catchphrase'], function (err, result) {
+	studentName = result.name;
 	studentGender = result.gender;
-});
-prompt.get('grade', function (err, result) {
-	console.log('Enter Student Grade:');
 	studentGrade = result.grade;
-});
-prompt.get('gpa', function (err, result) {
-	console.log('Enter Student GPA:');
 	studentGPA = result.gpa;
-});
-prompt.get('detentions', function (err, result) {
-	console.log('Enter Student Detentions:');
 	studentDetentions = result.detentions;
-});
-prompt.get('sleeping', function (err, result) {
-	console.log('Enter Student Sleeping In Class:');
 	studentSleeping = result.sleeping;
-});
-prompt.get('catchphrase', function (err, result) {
-	console.log('Enter Student Catch Phrase:');
 	studentCatchPhrase = result.catchphrase;
 });
 
 var newStudent = new Student(studentName, studentGender, studentGrade, studentGPA, studentDetentions, studentSleeping, studentCatchPhrase);
 newStudent.canStudentHaveFun();
+
+
 
 var schoolBus = new Bus('John', 'red', 100);
 
